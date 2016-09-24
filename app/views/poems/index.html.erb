@@ -1,0 +1,13 @@
+<% @poems.each do |poem| %>
+  <div class='poem'>
+    <div class='title'>
+      <%= poem.title %>
+    </div>
+    <div class='author'>
+      <%= poem.author.name %>
+    </div>
+    <div class='metaphor'>
+      <%= poem.description %>
+    </div>
+  </div>
+<% end %>

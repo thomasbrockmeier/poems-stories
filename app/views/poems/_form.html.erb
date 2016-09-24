@@ -1,0 +1,13 @@
+<%= form_for @poem do |f| %>
+  <%= f.text_field :title %>
+
+  <%= f.collection_select :author_id, Author.all, :id, :name %>
+
+  <%= f.date_field :publish_date %>
+
+  <%= f.text_area :metaphor %>
+
+  <%= f.text_area :content %>
+
+  <%= f.submit %>
+<% end %>
