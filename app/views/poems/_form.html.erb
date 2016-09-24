@@ -1,13 +1,17 @@
+<%= javascript_include_tag "form_helper" %>
+
 <%= form_for @poem do |f| %>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, placeholder: 'Title' %>
 
-  <%= f.collection_select :author_id, Author.all, :id, :name %>
+  <div class="input-field col s12">
+    <%= f.collection_select :author_id, Author.all, :id, :name %>
+  </div>
 
-  <%= f.date_field :publish_date %>
+  <%= f.date_field :publish_date, placeholder: 'Date Published' %>
 
-  <%= f.text_area :metaphor %>
+  <%= f.text_area :metaphor, placeholder: 'Metaphor' %>
 
-  <%= f.text_area :content %>
+  <%= f.text_area :content, placeholder: 'Content' %>
 
   <%= f.submit %>
 <% end %>
