@@ -7,9 +7,7 @@
       <h5><%= poem.author.name %></h5>
     </div>
     <div class='metaphor'>
-      <p>
-        <%= poem.metaphor %>
-      </p>
+      <%= simple_format(poem.metaphor) %>
     </div>
   </div>
 <% end %>

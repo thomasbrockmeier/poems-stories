@@ -7,9 +7,7 @@
       <h5><%= story.author.name %></h5>
     </div>
     <div class='description'>
-      <p>
-        <%= story.description %>
-      </p>
+      <%= simple_format(story.description) %>
     </div>
   </div>
 <% end %>
