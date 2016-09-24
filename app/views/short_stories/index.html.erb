@@ -10,6 +10,14 @@
       <div class='description'>
         <%= simple_format(story.description) %>
       </div>
+      <% if story.tags.length > 0 %>
+        <div class='tags'>
+          Tags:
+          <% story.tags.each do |t| %>
+            <%= t.tag.capitalize %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>

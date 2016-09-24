@@ -1,5 +1,21 @@
 @import "materialize";
 
+$a-tags: 'a, a:active, a:hover, a:visited';
+$a-tags-hover: 'a:active, a:hover';
+
+#{$a-tags} {
+  div {
+    color: #000000;
+    text-decoration: none;
+  }
+}
+
+#{$a-tags-hover} {
+  div {
+    @extend .blue, .lighten-5;
+  }
+}
+
 body {
   background: #FFFEFB;
   color: #0F1824;

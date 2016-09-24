@@ -15,6 +15,7 @@ class PoemsController < ApplicationController
     @poem = Poem.new(poem_params)
 
     if @poem.save
+      @poem.content = Tagger.tag_text(@poem, 'poem')
       redirect_to @poem
     else
       render action: 'new'
@@ -34,6 +35,6 @@ class PoemsController < ApplicationController
 
   private
   def poem_params
-    params.require(:poem).permit(:author, :title, :description, :content, :publish_date)
+    params.require(:poem).permit(:author_id, :metaphor, :title, :description, :content, :publish_date)
   end
 end

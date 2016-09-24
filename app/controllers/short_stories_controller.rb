@@ -15,6 +15,7 @@ class ShortStoriesController < ApplicationController
     @short_story = ShortStory.new(short_story_params)
 
     if @short_story.save
+      @short_story.content = Tagger.tag_text(@short_story, 'short_story')
       redirect_to @short_story
     else
       render action: 'new'
@@ -34,6 +35,6 @@ class ShortStoriesController < ApplicationController
 
   private
   def short_story_params
-    params.require(:short_story).permit(:author, :title, :description, :content, :publish_date)
+    params.require(:short_story).permit(:author_id, :title, :description, :content, :publish_date)
   end
 end

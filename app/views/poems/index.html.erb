@@ -10,6 +10,14 @@
       <div class='metaphor'>
         <%= simple_format(poem.metaphor) %>
       </div>
+      <% if poem.tags.length > 0 %>
+        <div class='tags'>
+          Tags:
+          <% poem.tags.each do |t| %>
+            <%= t.tag.capitalize %>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   <% end %>
 <% end %>
