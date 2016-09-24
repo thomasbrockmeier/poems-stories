@@ -1,10 +1,21 @@
 @import "materialize";
 
+body {
+  background: #FFFEFB;
+  color: #0F1824;
+}
+
+nav {
+  background: #5D6774;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
 textarea {
     height: auto;
 }
 
-.containter {
+.application-body {
   margin: auto;
   width: 80vw;
 }
