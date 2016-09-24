@@ -1,13 +1,27 @@
+<%= javascript_include_tag "form_helper" %>
+
 <%= form_for @short_story do |f| %>
-  <%= f.text_field :title %>
+  <div class="input-field col s12">
+    <%= f.text_field :title, placeholder: 'Title' %>
+  </div>
 
-  <%= f.collection_select :author_id, Author.all, :id, :name %>
+  <div class="input-field col s12">
+    <%= f.collection_select :author_id, Author.all, :id, :name, { prompt: 'Select Author' } %>
+  </div>
 
-  <%= f.date_field :publish_date %>
+  <div class="input-field col s12">
+    <%= f.date_field :publish_date, placeholder: 'Date Published', class: 'datepicker' %>
+  </div>
 
-  <%= f.text_area :description %>
+  <div class="input-field col s12">
+    <%= f.text_area :description, placeholder: 'Description', rows: 5 %>
+  </div>
 
-  <%= f.text_area :content %>
+  <div class="input-field col s12">
+    <%= f.text_area :content, placeholder: 'Content', rows: 10 %>
+  </div>
 
-  <%= f.submit %>
+  <div class="input-field col s12">
+    <%= f.submit class: 'btn waves-effect waves-light' %>
+  </div>
 <% end %>

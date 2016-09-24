@@ -1,17 +1,27 @@
 <%= javascript_include_tag "form_helper" %>
 
 <%= form_for @poem do |f| %>
-  <%= f.text_field :title, placeholder: 'Title' %>
-
   <div class="input-field col s12">
-    <%= f.collection_select :author_id, Author.all, :id, :name %>
+    <%= f.text_field :title, placeholder: 'Title' %>
   </div>
 
-  <%= f.date_field :publish_date, placeholder: 'Date Published' %>
+  <div class="input-field col s12">
+    <%= f.collection_select :author_id, Author.all, :id, :name, { prompt: 'Select Author' } %>
+  </div>
 
-  <%= f.text_area :metaphor, placeholder: 'Metaphor' %>
+  <div class="input-field col s12">
+    <%= f.date_field :publish_date, placeholder: 'Date Published', class: 'datepicker' %>
+  </div>
 
-  <%= f.text_area :content, placeholder: 'Content' %>
+  <div class="input-field col s12">
+    <%= f.text_area :metaphor, placeholder: 'Metaphor', rows: 5 %>
+  </div>
 
-  <%= f.submit %>
+  <div class="input-field col s12">
+    <%= f.text_area :content, placeholder: 'Content', rows: 10 %>
+  </div>
+
+  <div class="input-field col s12">
+    <%= f.submit class: 'btn waves-effect waves-light' %>
+  </div>
 <% end %>
