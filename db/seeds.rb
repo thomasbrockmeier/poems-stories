@@ -1,3 +1,16 @@
+tags = [
+  'poem',
+  'story',
+  'science fiction',
+  'night',
+  'experimental',
+  'award-winning',
+  'metaphysical',
+  'novelty'
+]
+
+tags.each { |tag| Tag.create(tag: tag) }
+
 philip_k_dick = Author.create(
   name: 'Philip K. Dick',
   biography: '
@@ -455,6 +468,19 @@ Sherikov laughed. "What can he do? How can he stop me? I have my own men. You sa
 
 "Then you agree?"
 
-"I agree," Thomas Cole said. "I\'ll wire it for you. I\'ll complete the control turret--within the next five days." 
+"I agree," Thomas Cole said. "I\'ll wire it for you. I\'ll complete the control turret--within the next five days."
 '
 )
+
+
+Author.all.each do |author|
+  Tagger.tag_text(author, 'author')
+end
+
+Poem.all.each do |poem|
+  Tagger.tag_text(poem, 'poem')
+end
+
+ShortStory.all.each do |short_story|
+  Tagger.tag_text(short_story, 'short_story')
+end
