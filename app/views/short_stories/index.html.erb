@@ -1,13 +1,15 @@
 <% @short_stories.each do |story| %>
-  <div class='short-story'>
-    <div class='title'>
-      <h3><%= story.title %></h3>
+  <%= link_to story do %>
+    <div class='short-story'>
+      <div class='title'>
+        <h3><%= story.title %></h3>
+      </div>
+      <div class='author'>
+        <h5><%= story.author.name %></h5>
+      </div>
+      <div class='description'>
+        <%= simple_format(story.description) %>
+      </div>
     </div>
-    <div class='author'>
-      <h5><%= story.author.name %></h5>
-    </div>
-    <div class='description'>
-      <%= simple_format(story.description) %>
-    </div>
-  </div>
+  <% end %>
 <% end %>

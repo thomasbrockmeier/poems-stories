@@ -1,7 +1,7 @@
 <div class='content-header'>
-  <h1><%= @poem.title %></h1>
-  <h2><%= @poem.author.name %></h2>
-  <h5><%= simple_format(@poem.metaphor) %></h5>
+  <h3><%= @poem.title %></h3>
+  <h5><%= @poem.author.name %></h5>
+  <b><%= simple_format(@poem.metaphor) %></b>
 </div>
 <div class='content-body'>
   <%= simple_format(@poem.content) %>

@@ -1,13 +1,15 @@
 <% @poems.each do |poem| %>
-  <div class='poem'>
-    <div class='title'>
-      <h3><%= poem.title %></h3>
+  <%= link_to poem do %>
+    <div class='poem'>
+      <div class='title'>
+        <h3><%= poem.title %></h3>
+      </div>
+      <div class='author'>
+        <h5><%= poem.author.name %></h5>
+      </div>
+      <div class='metaphor'>
+        <%= simple_format(poem.metaphor) %>
+      </div>
     </div>
-    <div class='author'>
-      <h5><%= poem.author.name %></h5>
-    </div>
-    <div class='metaphor'>
-      <%= simple_format(poem.metaphor) %>
-    </div>
-  </div>
+  <% end %>
 <% end %>

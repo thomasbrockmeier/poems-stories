@@ -1,7 +1,7 @@
 <div class='content-header'>
-  <h1><%= @short_story.title %></h1>
-  <h2><%= @short_story.author.name %></h2>
-  <h5><%= simple_format(@short_story.description) %></h5>
+  <h3><%= @short_story.title %></h3>
+  <h5><%= @short_story.author.name %></h5>
+  <b><%= simple_format(@short_story.description) %></b>
 </div>
 <div class='content-body'>
   <%= simple_format(@short_story.content) %>
