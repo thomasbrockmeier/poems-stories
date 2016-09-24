@@ -1,0 +1,13 @@
+<% @short_stories.each do |story| %>
+  <div class='short-story'>
+    <div class='title'>
+      <%= story.title %>
+    </div>
+    <div class='author'>
+      <%= story.author.name %>
+    </div>
+    <div class='description'>
+      <%= story.description %>
+    </div>
+  </div>
+<% end %>
