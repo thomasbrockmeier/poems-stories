@@ -3,7 +3,9 @@ $(document).ready(function() {
 
   $('.datepicker').pickadate({
     format: 'dd/mm/yyyy',
+    min: new Date(1716,1,1),
+    max: new Date(),
     selectMonths: true,
-    selectYears: 100
+    selectYears: 300
   });
 });
