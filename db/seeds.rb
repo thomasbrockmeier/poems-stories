@@ -2,7 +2,6 @@ philip_k_dick = Author.create(
   name: 'Philip K. Dick',
   biography: '
   Philip K. Dick is considered to be one of the most important figures in 20th-century American science fiction. He was brilliantly inventive, gaining access to imaginative realms which no other writer of science fiction had reached.
-  Martian Time-Slip
 
   Dick\'s paranoia about godlike manipulations of consensual reality marks a theme he would obsessively repeat, just as the confusion of humans and mechanical simulacra might be considered one particular variant of the major theme that runs right through his work: the juxtaposition of two "levels of reality"â€"one "objectively" determined, the other a world of appearances imposed upon characters.
 
