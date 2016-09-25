@@ -1,12 +1,12 @@
 tags = [
-  /poem/i,
-  /story/i,
-  /science fiction/i,
-  /night/i,
-  /experimental/i,
-  /award-winning/i,
-  /metaphysical/i,
-  /novelty/i
+  'poem',
+  'story',
+  'science fiction',
+  'night',
+  'experimental',
+  'award-winning',
+  'metaphysical',
+  'novelty'
 ]
 
 tags.each { |tag| Tag.create(tag: tag) }
