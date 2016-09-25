@@ -16,7 +16,7 @@
 
   <div class="input-field col s12">
     <%= f.select :author_id, { prompt: 'Select Author' } do %>
-      <option value="" selected disabled>Select Author</option>
+      <option value="" <%= 'selected' if !@poem.author_id %> disabled>Select Author</option>
       <% Author.all.each do |author| %>
         <%= content_tag(:option, author.name, value: author.id) %>
       <% end %>
