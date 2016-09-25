@@ -18,7 +18,7 @@ class ShortStoriesController < ApplicationController
       @short_story.content = Tagger.tag_text(@short_story, 'short_story')
       redirect_to @short_story
     else
-      render action: 'new'
+      render 'new'
     end
   end
 

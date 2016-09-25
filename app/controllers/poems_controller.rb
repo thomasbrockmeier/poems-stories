@@ -18,7 +18,7 @@ class PoemsController < ApplicationController
       @poem.content = Tagger.tag_text(@poem, 'poem')
       redirect_to @poem
     else
-      render action: 'new'
+      render 'new'
     end
   end
 

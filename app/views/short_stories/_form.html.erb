@@ -1,6 +1,15 @@
 <%= javascript_include_tag "form_helper" %>
 
 <%= form_for @short_story do |f| %>
+  <% if @short_story.errors.any? %>
+    <% @short_story.errors.full_messages.each do |msg| %>
+      <script type="text/javascript">
+        var msg = "<%= msg %>";
+        Materialize.toast(msg, 5000, 'toast-error');
+      </script>
+    <% end %>
+  <% end %>
+  
   <div class="input-field col s12">
     <%= f.text_field :title, placeholder: 'Title' %>
   </div>
