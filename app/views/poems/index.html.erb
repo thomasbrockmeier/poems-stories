@@ -13,8 +13,10 @@
       <% if poem.tags.length > 0 %>
         <div class='tags'>
           Tags:
-          <% poem.tags.each do |t| %>
-            <%= t.tag.capitalize %>
+          <% poem.tags.uniq.pluck(:tag).each do |t| %>
+            <div class="chip">
+              <%= t.split.map(&:capitalize).join(' ') %>
+            </div>
           <% end %>
         </div>
       <% end %>

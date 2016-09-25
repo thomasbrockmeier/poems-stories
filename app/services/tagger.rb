@@ -1,16 +1,23 @@
 class Tagger
   def self.tag_text(input_model, database_model)
-    Tag.all.each do |tag|
-      case database_model.downcase
-      when 'author'
+    case database_model.downcase
+    when 'author'
+      Author.find(input_model).tags.destroy_all
+      Tag.all.each do |tag|
         if input_model.biography.match(tag.tag)
           Author.find(input_model).tags << Tag.find(tag)
         end
-      when 'poem'
+      end
+    when 'poem'
+      Poem.find(input_model).tags.destroy_all
+      Tag.all.each do |tag|
         if input_model.content.match(tag.tag)
           Poem.find(input_model).tags << Tag.find(tag)
         end
-      when 'short_story'
+      end
+    when 'short_story'
+      ShortStory.find(input_model).tags.destroy_all
+      Tag.all.each do |tag|
         if input_model.content.match(tag.tag)
           ShortStory.find(input_model).tags << Tag.find(tag)
         end
