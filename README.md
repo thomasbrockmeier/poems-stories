@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby v2.3.1
+Rails v5.0.0.1
+Postgres
 
-Things you may want to cover:
+In order to run:
 
-* Ruby version
+Clone or fork this respository,
 
-* System dependencies
+cd to its directory,
 
-* Configuration
+run bundle install, rails db:create, rails db:migrate, and rails db:seed,
 
-* Database creation
+start up your server (rails s),
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+and navigate to localhost:3000
