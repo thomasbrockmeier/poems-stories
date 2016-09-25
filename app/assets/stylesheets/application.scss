@@ -4,15 +4,18 @@ $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 
 #{$a-tags} {
-  div {
+  .poem, .short-story {
+    border-left: #FFFEFB solid thick;
     color: #000000;
     text-decoration: none;
   }
 }
 
 #{$a-tags-hover} {
-  div {
-    @extend .blue, .lighten-5;
+  .poem, .short-story {
+    background: #F1F2F4;
+    border-left: #8E98A4 solid thick;
+    color: #0F1824;
   }
 }
 
@@ -49,6 +52,10 @@ textarea {
 
 .content-header h5 {
   display: inline-block;
+}
+
+.poem, .short-story {
+  padding: 2vw;
 }
 
 .toast-error {
