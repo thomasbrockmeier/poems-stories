@@ -1,9 +1,11 @@
-<div class='content-header'>
-  <h3><%= @short_story.title %></h3>
-  <h5><%= link_to @short_story.author.name, author_path(@short_story.author) %></h5>
-  <%= link_to 'Edit', edit_short_story_url, class: 'waves-effect waves-light btn' %>
-  <b><%= simple_format(@short_story.description) %></b>
-</div>
-<div class='content-body'>
-  <%= simple_format(@short_story.content) %>
+<div class="element-container">
+  <div class='content-header'>
+    <h3><%= @short_story.title %></h3>
+    <h5><%= link_to @short_story.author.name, author_path(@short_story.author) %></h5>
+    <%= link_to 'Edit', edit_short_story_url, class: 'waves-effect waves-light btn' %>
+    <b><%= simple_format(@short_story.description) %></b>
+  </div>
+  <div class='content-body'>
+    <%= simple_format(@short_story.content) %>
+  </div>
 </div>

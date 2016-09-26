@@ -4,33 +4,31 @@ $a-tags: 'a, a:active, a:hover, a:visited';
 $a-tags-hover: 'a:active, a:hover';
 
 #{$a-tags} {
-  .poem, .short-story {
-    border-left: #FFFEFB solid thick;
+  .element-container {
+    border-left: rgba(255,255,255,0) solid thick;
     color: #000000;
     text-decoration: none;
   }
 }
 
 #{$a-tags-hover} {
-  .poem, .short-story {
+  .element-container {
     @extend  .z-depth-2;
-    background: #F1F2F4;
-    border-left: #8E98A4 solid thick;
+    border-left: rgba(33,150,243,0.5) solid thick;
     color: #0F1824;
   }
 }
 
 body {
-  background: #FFFEFB;
   color: #0F1824;
 }
 
 main {
-  margin-bottom: 10vw;
+  height: auto;
 }
 
 nav {
-  background: #5D6774;
+  background: rgb(15,24,36);
   padding-left: 5vw;
   padding-right: 5vw;
 }
@@ -40,11 +38,18 @@ textarea {
 }
 
 .application-body {
-  margin-bottom: 5vw;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2.5vw;
+  padding-top: 5vw;
+  padding-bottom: 10vw;
   width: 60vw;
+}
+
+.element-container {
+  background-color: rgba(255,254,251,0.8);
+  margin-bottom: 2vw;
+  padding: 2vw;
+  @extend  .z-depth-1;
 }
 
 .content-header {
@@ -59,6 +64,10 @@ textarea {
   display: inline-block;
 }
 
+.footer-copyright {
+  background-color: rgba(15,24,36,0.4) !important;
+}
+
 .footer-text {
   margin-bottom: 5vw;
 }
@@ -69,15 +78,21 @@ textarea {
 }
 
 .page-footer {
-  background-color: #5D6774 !important;
+  background-color: rgba(15,24,36,0.6) !important;
   color: #FFFEFB;
-  margin-top: 5vw;
+  margin: 0px !important;
 }
 
-.poem, .short-story {
-  @extend  .z-depth-1;
-  margin-bottom: 2vw;
-  padding: 2vw;
+.parallax {
+  background-image: asset-url('books.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parallax-container {
+  height: auto;
 }
 
 .toast-error {

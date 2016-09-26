@@ -1,16 +1,18 @@
-<div class="content-header">
-  <h3><%= @author.name %></h3>
-  <% if @author.tags.length > 0 %>
-    <div class='tags'>
-      Tags:
-      <% @author.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
-        <div class="chip">
-          <%= t.split.map(&:capitalize).join(' ') %>
-        </div>
-      <% end %>
-    </div>
-  <% end %>
-</div>
-<div class="content-body">
-  <%= simple_format(@author.biography) %>
+<div class="element-container">
+  <div class="content-header">
+    <h3><%= @author.name %></h3>
+    <% if @author.tags.length > 0 %>
+      <div class='tags'>
+        Tags:
+        <% @author.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
+          <div class="chip">
+            <%= t.split.map(&:capitalize).join(' ') %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+  <div class="content-body">
+    <%= simple_format(@author.biography) %>
+  </div>
 </div>

@@ -12,11 +12,16 @@
     <div class='application-navbar'>
       <%= render 'layouts/navbar' %>
     </div>
-    <div class='application-body'>
-      <main>
-        <%= yield %>
-      </main>
-    </div>
+    <main>
+      <div class="parallax-container">
+        <div class="parallax">
+
+        </div>
+        <div class='application-body'>
+          <%= yield %>
+        </div>
+      </div>
+    </main>
     <div class='application-footer'>
       <%= render 'layouts/footer' %>
     </div>

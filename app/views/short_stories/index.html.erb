@@ -1,25 +1,27 @@
 <% @short_stories.each do |story| %>
   <%= link_to story do %>
-    <div class='short-story'>
-      <div class='title'>
-        <h3><%= story.title %></h3>
-      </div>
-      <div class='author'>
-        <h5><%= story.author.name %></h5>
-      </div>
-      <div class='description'>
-        <%= simple_format(story.description) %>
-      </div>
-      <% if story.tags.length > 0 %>
-        <div class='tags'>
-          Tags:
-          <% story.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
-            <div class="chip">
-              <%= t.split.map(&:capitalize).join(' ') %>
-            </div>
-          <% end %>
+    <div class="element-container">
+      <div class='short-story'>
+        <div class='title'>
+          <h3><%= story.title %></h3>
         </div>
-      <% end %>
+        <div class='author'>
+          <h5><%= story.author.name %></h5>
+        </div>
+        <div class='description'>
+          <%= simple_format(story.description) %>
+        </div>
+        <% if story.tags.length > 0 %>
+          <div class='tags'>
+            Tags:
+            <% story.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
+              <div class="chip">
+                <%= t.split.map(&:capitalize).join(' ') %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   <% end %>
 <% end %>
