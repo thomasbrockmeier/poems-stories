@@ -4,6 +4,16 @@
     <h5><%= link_to @short_story.author.name, author_path(@short_story.author) %></h5>
     <%= link_to 'Edit', edit_short_story_url, class: 'waves-effect waves-light btn' %>
     <b class="description"><%= simple_format(@short_story.description) %></b>
+    <% if @short_story.tags.length > 0 %>
+      <div class='tags'>
+        Tags:
+        <% @short_story.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
+          <div class="chip">
+            <%= t.split.map(&:capitalize).join(' ') %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
   </div>
   <div class='content-body'>
     <%= simple_format(@short_story.content) %>
