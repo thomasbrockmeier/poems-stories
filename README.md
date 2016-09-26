@@ -1,7 +1,7 @@
 # README
 
-Ruby v2.3.1
-Rails v5.0.0.1
+Ruby v2.3.1\n
+Rails v5.0.0.1\n
 Postgres
 
 In order to run:
