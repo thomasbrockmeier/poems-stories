@@ -13,7 +13,7 @@
       <% if story.tags.length > 0 %>
         <div class='tags'>
           Tags:
-          <% story.tags.uniq.pluck(:tag).each do |t| %>
+          <% story.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
             <div class="chip">
               <%= t.split.map(&:capitalize).join(' ') %>
             </div>
