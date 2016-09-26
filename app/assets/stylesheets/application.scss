@@ -13,6 +13,7 @@ $a-tags-hover: 'a:active, a:hover';
 
 #{$a-tags-hover} {
   .poem, .short-story {
+    @extend  .z-depth-2;
     background: #F1F2F4;
     border-left: #8E98A4 solid thick;
     color: #0F1824;
@@ -22,6 +23,10 @@ $a-tags-hover: 'a:active, a:hover';
 body {
   background: #FFFEFB;
   color: #0F1824;
+}
+
+main {
+  margin-bottom: 10vw;
 }
 
 nav {
@@ -54,7 +59,24 @@ textarea {
   display: inline-block;
 }
 
+.footer-text {
+  margin-bottom: 5vw;
+}
+
+.footer-padding {
+  padding-left: 7.5vw;
+  padding-right: 7.5vw;
+}
+
+.page-footer {
+  background-color: #5D6774 !important;
+  color: #FFFEFB;
+  margin-top: 5vw;
+}
+
 .poem, .short-story {
+  @extend  .z-depth-1;
+  margin-bottom: 2vw;
   padding: 2vw;
 }
 
