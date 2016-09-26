@@ -13,7 +13,7 @@ $a-tags-hover: 'a:active, a:hover';
 
 #{$a-tags-hover} {
   .element-container {
-    @extend  .z-depth-2;
+    @extend  .z-depth-3;
     border-left: rgba(33,150,243,0.5) solid thick;
     color: #0F1824;
   }
@@ -45,11 +45,15 @@ textarea {
   width: 60vw;
 }
 
+.biography, .description, .metaphor {
+  text-align: justify;
+}
+
 .element-container {
   background-color: rgba(255,254,251,0.8);
   margin-bottom: 2vw;
   padding: 2vw;
-  @extend  .z-depth-1;
+  @extend  .z-depth-2;
 }
 
 .content-header {

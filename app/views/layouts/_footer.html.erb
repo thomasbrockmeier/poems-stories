@@ -1,7 +1,7 @@
 <footer class='page-footer'>
   <div class="col 16 s12">
     <div class="footer-padding">
-      <h5>Short Stories &amp Poems</h5>
+      <h5><%= image_tag 'logo.png', size: "22x22" %> Short Stories &amp Poems</h5>
       <p class='footer-text'>
         Read short stories and poems by your favorite authors!
       </p>
@@ -9,7 +9,7 @@
   </div>
   <div class="footer-copyright">
     <div class='footer-padding'>
-      Created for Inspire.nl by Thomas Brockmeier
+      Created for <%=link_to "Inspire.nl", "https://www.inspire.nl/", class: "grey-text text-lighten-4" %> by Thomas Brockmeier
       <%= link_to "Github", "https://github.com/thomasbrockmeier/poems-stories", class: "grey-text text-lighten-4 right" %>
     </div>
   </div>
