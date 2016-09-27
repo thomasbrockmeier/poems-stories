@@ -1,4 +1,4 @@
-$(document).ready(function() {  
+$(document).ready(function() {
   $('select').material_select();
 
   $('.datepicker').pickadate({
@@ -7,5 +7,9 @@ $(document).ready(function() {
     max: new Date(),
     selectMonths: true,
     selectYears: 300
+  });
+
+  $(function() {
+    Materialize.updateTextFields();
   });
 });

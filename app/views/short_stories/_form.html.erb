@@ -1,41 +1,48 @@
 <%= javascript_include_tag "form_helper" %>
 
-<%= form_for @short_story do |f| %>
-  <% if @short_story.errors.any? %>
-    <% @short_story.errors.full_messages.each do |msg| %>
-      <script type="text/javascript">
-        var msg = "<%= msg %>";
-        Materialize.toast(msg, 5000, 'toast-error');
-      </script>
-    <% end %>
-  <% end %>
-
-  <div class="input-field col s12">
-    <%= f.text_field :title, placeholder: 'Title' %>
-  </div>
-
-  <div class="input-field col s12">
-    <%= f.select :author_id, { prompt: 'Select Author' } do %>
-      <option value="" <%= 'selected' if !@short_story.author_id %> disabled>Select Author</option>
-      <% Author.all.each do |author| %>
-        <%= content_tag(:option, author.name, value: author.id) %>
+<div class="row">
+  <%= form_for @short_story, class: 'col s12' do |f| %>
+    <% if @short_story.errors.any? %>
+      <% @short_story.errors.full_messages.each do |msg| %>
+        <script type="text/javascript">
+          var msg = "<%= msg %>";
+          Materialize.toast(msg, 5000, 'toast-error');
+        </script>
       <% end %>
     <% end %>
-  </div>
 
-  <div class="input-field col s12">
-    <%= f.date_field :publish_date, placeholder: 'Date Published', class: 'datepicker' %>
-  </div>
+    <div class="input-field col s12">
+      <%= f.text_field :title, class: 'form-field' %>
+      <%= label :short_story, :title %>
+    </div>
 
-  <div class="input-field col s12">
-    <%= f.text_area :description, placeholder: 'Description', rows: 5 %>
-  </div>
+    <div class="input-field col s12">
+      <%= f.select :author_id, { prompt: 'Select Author' } do %>
+        <option value="" <%= 'selected' if !@short_story.author_id %> disabled></option>
+        <% Author.all.each do |author| %>
+          <%= content_tag(:option, author.name, value: author.id) %>
+        <% end %>
+      <% end %>
+      <%= label :short_story, :author %>
+    </div>
 
-  <div class="input-field col s12">
-    <%= f.text_area :content, placeholder: 'Content', rows: 10 %>
-  </div>
+    <div class="input-field col s12">
+      <%= f.date_field :publish_date, class: 'datepicker' %>
+      <%= label :short_story, :publish_date %>
+    </div>
 
-  <div class="input-field col s12">
-    <%= f.submit class: 'btn waves-effect waves-light' %>
-  </div>
-<% end %>
+    <div class="input-field col s12">
+      <%= f.text_area :description, rows: 5 %>
+      <%= label :short_story, :description %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.text_area :content, rows: 10 %>
+      <%= label :short_story, :content %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.submit class: 'btn waves-effect waves-light' %>
+    </div>
+  <% end %>
+</div>

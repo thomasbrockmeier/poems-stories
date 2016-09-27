@@ -8,15 +8,15 @@ $a-tags-hover: 'a:active, a:hover';
     border-left: rgba(255,255,255,0) solid thick;
     color: #000000;
     text-decoration: none;
-    transition: background 0.25s linear, border 0.25s linear, box-shadow 0.25s linear;
+    transition: background 0.1s linear, border 0.1s linear, box-shadow 0.1s linear;
   }
 }
 
 #{$a-tags-hover} {
   .element-container {
-    @extend  .z-depth-3;
-    background-color: rgba(255,254,251,0.85);
-    border-left: rgba(33,150,243,0.5) solid thick;
+    background-color: rgba(255,254,251,0.9);
+    box-shadow: 0 8px 10px 1px rgba(255, 255, 255, 0.14), 0 3px 14px 2px rgba(255, 255, 255, 0.12), 0 5px 5px -3px rgba(255, 255, 255, 0.3);
+    border-left: rgba(33,150,243,0.75) solid thick;
     color: #0F1824;
   }
 }
@@ -44,7 +44,7 @@ textarea {
   margin-left: auto;
   margin-right: auto;
   padding-top: 5vw;
-  padding-bottom: 10vw;
+  padding-bottom: 5vw;
   width: 60vw;
 }
 
@@ -54,9 +54,10 @@ textarea {
 
 .element-container {
   background-color: rgba(255,254,251,0.8);
-  margin-bottom: 2vw;
+  box-shadow: 0 4px 5px 0 rgba(255, 255, 255, 0.14), 0 1px 10px 0 rgba(255, 255, 255, 0.12), 0 2px 4px -1px rgba(255, 255, 255, 0.3);
+  margin-bottom: 5vw;
   padding: 2vw;
-  @extend  .z-depth-2;
+  padding-bottom: 5vw;
 }
 
 .content-header {
@@ -82,6 +83,10 @@ textarea {
 .footer-padding {
   padding-left: 7.5vw;
   padding-right: 7.5vw;
+}
+
+.input-field{
+  margin-bottom: 1vw;
 }
 
 .page-footer {
