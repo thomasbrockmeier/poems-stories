@@ -14,7 +14,7 @@
         <% if poem.tags.length > 0 %>
           <div class='tags'>
             Tags:
-            <% poem.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
+            <% poem.tags.order(:tag).distinct.pluck(:tag).each do |t| %>
               <div class="chip">
                 <%= t.split.map(&:capitalize).join(' ') %>
               </div>
