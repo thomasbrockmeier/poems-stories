@@ -1,6 +1,6 @@
 class ShortStoriesController < ApplicationController
   def index
-    @short_stories = ShortStory.all
+    @short_stories = ShortStory.all.sort_by(&:created_at).reverse
   end
 
   def show

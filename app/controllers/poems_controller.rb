@@ -1,6 +1,6 @@
 class PoemsController < ApplicationController
   def index
-    @poems = Poem.all
+    @poems = Poem.all.sort_by(&:created_at).reverse
   end
 
   def show
