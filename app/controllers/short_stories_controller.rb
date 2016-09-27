@@ -28,8 +28,8 @@ class ShortStoriesController < ApplicationController
 
   def update
     short_story = ShortStory.find(params[:id])
-    short_story.content = Tagger.tag_text(short_story, 'short_story')
     if short_story.update!(short_story_params)
+      Tagger.tag_text(short_story, 'short_story')
       redirect_to short_story
     else
       render 'edit'

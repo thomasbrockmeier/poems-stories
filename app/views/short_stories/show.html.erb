@@ -7,7 +7,7 @@
     <% if @short_story.tags.length > 0 %>
       <div class='tags'>
         Tags:
-        <% @short_story.tags.order(:tag).uniq.pluck(:tag).each do |t| %>
+        <% @short_story.tags.order(:tag).distinct.pluck(:tag).each do |t| %>
           <div class="chip">
             <%= t.split.map(&:capitalize).join(' ') %>
           </div>

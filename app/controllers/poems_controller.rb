@@ -28,8 +28,8 @@ class PoemsController < ApplicationController
 
   def update
     poem = Poem.find(params[:id])
-    poem.content = Tagger.tag_text(poem, 'poem')
     if poem.update!(poem_params)
+      Tagger.tag_text(poem, 'poem')
       redirect_to poem
     else
       render 'edit'
