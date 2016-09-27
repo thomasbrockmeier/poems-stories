@@ -6,7 +6,19 @@ tags = [
   'experimental',
   'award-winning',
   'metaphysical',
-  'novelty'
+  'novelty',
+  'romantic',
+  'great',
+  'metaphor',
+  'art',
+  'literature',
+  'nobel prize',
+  '20th-century',
+  'american',
+  'irish',
+  'theology',
+  'gray',
+  'world'
 ]
 
 tags.each { |tag| Tag.create(tag: tag) }
