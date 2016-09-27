@@ -17,10 +17,11 @@
     </div>
 
     <div class="input-field col s12">
-      <%= f.select :author_id, { prompt: 'Select Author' } do %>
+      <%= f.hidden_field :author_id %>
+      <%= f.select :author_id do %>
         <option value="" <%= 'selected' if !@short_story.author_id %> disabled></option>
         <% Author.all.each do |author| %>
-          <%= content_tag(:option, author.name, value: author.id) %>
+          <%= content_tag :option, author.name, value: author.id %>
         <% end %>
       <% end %>
       <%= label :short_story, :author %>

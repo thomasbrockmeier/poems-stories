@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  // Hack to force select box to display correct author
+  $('select:first').val($('#poem_author_id').val());
   $('select').material_select();
 
   $('.datepicker').pickadate({
